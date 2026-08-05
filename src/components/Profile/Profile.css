@@ -1,0 +1,244 @@
+h2 {
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+h4 {
+    margin: 0;
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+
+img {
+    width: 100px;
+}
+
+hr {
+    border-top: 1px solid #ececed;
+    margin: 0px -20px 0 -20px;
+}
+
+dt {
+    color: gray;
+    font-size: 80%;
+}
+
+dd {
+    margin: 0;
+    margin-bottom: 15px;
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 -20px 0 -20px;
+    width: calc(100% + 40px);
+}
+
+
+th, td {
+    padding: 10px;
+}
+
+th {
+    font-weight: normal;
+    text-align: start;
+    background-color: #f8f8f8;
+    border: 1px rgb(236, 236, 236) solid;
+    height: 2em;
+    box-sizing: border-box;
+}
+
+
+
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.name > h2 {
+    margin-bottom: 0px;
+}
+
+nav > ul {
+    display: flex;
+}
+
+nav > ul > li {
+    width: 10vw;
+}
+
+nav > ul > li > button {
+    background-color: white;
+    width: 100%;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+}
+
+section > div {
+    width: 33%;   
+}
+
+.card {
+    border: 1px solid #ececed;
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+.label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.action {
+    padding: 0;
+    height: fit-content;
+}
+
+.action > img {
+    width: 25px;
+}
+
+input[type="text"] {
+    height: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+}
+
+.logs > li {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.logs h4 {
+    margin-bottom: 0;
+}
+
+.logs p {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.logs div {
+    margin-left: 18px;
+}
+
+.logs img {
+    width: 30px;
+}
+
+.logs time {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.two-columns th {
+    width: 50%;
+}
+
+.three-columns th {
+    width: 33%;
+}
+
+.method {
+    background-color: #f8f8f8;
+    border-top: 1px solid #ececed;
+    border-bottom: 1px solid #ececed;
+    margin: 0 -20px 0 -20px;
+    padding: 10px 0 10px 20px;
+}
+
+.preferences {
+    width: 90%;
+}
+
+.preferences > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.preferences > div > div > * {
+    margin-right: 15px;
+}
+
+.deny {
+    color: gray;
+}
+
+.allow {
+    color: #2bb567;
+}
+
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 1.3em;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: red;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(23px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
+  background-color: #2bb567;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
