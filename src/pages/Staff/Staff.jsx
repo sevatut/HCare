@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { useSelector } from 'react-redux';
 import './Staff.css'
+import Score from '../../components/Score';
 
 export default function Staff() {
     const booking = useRef({});

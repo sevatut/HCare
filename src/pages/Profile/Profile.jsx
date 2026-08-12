@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux';
 import './Profile.css'
-import InformationCard from './InformationCard';
-import ActivitesCard from './ActivitiesCard';
-import ContactPreferences from './ContactPreferences';
-import AppointmentsCard from './AppointmentsCard';
-import FeedbackCard from './FeedbackCard';
-import SurveysCard from './SurveysCard';
+import InformationCard from '../../modules/InformationCard';
+import ActivitesCard from '../../modules/ActivitiesCard';
+import ContactPreferences from '../../modules/ContactPreferences';
+import AppointmentsCard from '../../modules/AppointmentsCard';
+import FeedbackCard from '../../modules/FeedbackCard';
+import SurveysCard from '../../modules/SurveysCard';
 
 export default function Profile() {
 

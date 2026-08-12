@@ -4,9 +4,9 @@ import reactLogo from './assets/react.svg'
 import { useGetUsersQuery } from './services/usersApi'
 import { setUsers } from './services/usersSlice';
 import './App.css'
-import Profile from './components/Profile/Profile'
-import Staff from './components/Staff/Staff'
-import Feedback from './components/Feedback/Feedback'
+import Profile from './pages/Profile/Profile';
+import Staff from './pages/Staff/Staff';
+import Feedback from './components/Score';
 import { defaultSerializeQueryArgs } from '@reduxjs/toolkit/query';
 import { Routes, Route } from "react-router-dom";
 

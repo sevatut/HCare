@@ -1,7 +1,7 @@
 
 import { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { updateUser } from '../../services/usersSlice';
+import { updateUser } from "../services/usersSlice";
 
 export default function ActivitesCard( {activities} ) {
     const dispatch = useDispatch();
