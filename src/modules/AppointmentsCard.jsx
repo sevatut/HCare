@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateUser } from "../services/usersSlice";
 import PopUp from "./PopUp";
+import TableAppointments from "./TableAppointments";
 
 export default function AppointmentsCard( {appointments} ) {     
     const [popUp, setPopUp] = useState(false);
@@ -13,23 +14,7 @@ export default function AppointmentsCard( {appointments} ) {
                             <button className='action' onClick={() => setPopUp(true)}><img src="add.png" alt="Add"/></button>
                         </div>
 
-                        <table className='three-columns'>
-                            <thead>
-                                <tr>
-                                    <th scope="col">Start Time</th>
-                                    <th scope="col">Speciality</th>
-                                    <th scope="col">Status</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                {appointments?.map((appointment) => <tr key={appointment.id}>
-                                    <td><time dateTime={appointment.startTime}>{new Date(appointment.startTime).toLocaleString('en-US', {dateStyle:'short', timeStyle:'short'})}</time></td>
-                                    <td>{appointment.speciality[0].toUpperCase() + appointment.speciality.slice(1)}</td>
-                                    <td>{appointment.status ? "Confirmed" : "Cancelled"}</td>
-                                </tr>)}
-                            </tbody>
-                        </table>    
+                        <TableAppointments appointments={appointments}></TableAppointments>   
                     </div>
 
 
