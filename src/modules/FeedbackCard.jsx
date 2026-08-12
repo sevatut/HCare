@@ -1,45 +1,10 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateUser } from "../services/usersSlice";
+import PopUp from "./PopUp";
 
 export default function FeedbackCard( {feedback} ) { 
-    const dispatch = useDispatch();
-    
     const [popUp, setPopUp] = useState(false);
-    
-    const [caseTitle, setCaseTitle] = useState("");
-    const [date, setDate] = useState("");
-    const [status, setStatus] = useState(1);
-
-    const handleSumbit = (e) => {
-        e.preventDefault();
-
-        if (!(caseTitle && date && status)) 
-            return;
-
-            
-        dispatch(updateUser({
-                    id: 1,
-                    changes: {
-                        feedback: [
-                            ...feedback,
-                            {
-                                caseTitle,
-                                date,
-                                status,
-                                id: Date.now()
-                            }
-                        ]
-                    }
-                })
-                );
-        
-        setCaseTitle("");
-        setDate("");
-        setStatus(1);
-
-        setPopUp(false);
-    } 
 
     return ( <>
                 <div className='card'>
@@ -66,38 +31,32 @@ export default function FeedbackCard( {feedback} ) {
                         </tbody>
                     </table>
                 </div>
-                { popUp ? <>
-                    <form>
-                        <button className='action close' onClick={() => setPopUp(false)}><img src="close.png" alt="Close" /></button>
 
-                        <label>
-                            <h4>Case Title</h4>
-                            <input type="input" onChange={(e) => setCaseTitle(e.target.value)} value={caseTitle}/>
-                        </label>
-
-                        <label>
-                            <h4>Date</h4>
-                            <input type="date" onChange={(e) => setDate(e.target.value)} value={date}/>
-                        </label>
-
-                        <label>
-                            <h4>Status</h4>
-                            <select onChange={(e) => setStatus(e.target.value)} value={status}>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </label>
-
-                        <div>
-                            <button className='action' onClick={handleSumbit}><img src="send.png" alt="Send" /></button>
-                        </div>
-                    </form>
-                    </>
-                    : null
-                    }
+                { popUp ? <PopUp addition={{
+                    subject: "feedback",
+                    inputs: {
+                        caseTitle: {
+                            type: "text",
+                            name: "Case Title"
+                        },
+                        date: {
+                            type: "date",
+                            name: "Date"
+                        },
+                        status: {
+                            type: "select",
+                            name: "Status",
+                            options: {
+                                1: "1",
+                                2: "2",
+                                3: "3",
+                                4: "4",
+                                5: "5"
+                            }
+                        }
+                    }       
+                }
+                } onClose={setPopUp} list={feedback}></PopUp> : null }
             </>
     )
 }

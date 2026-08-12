@@ -1,42 +1,10 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateUser } from "../services/usersSlice";
+import PopUp from "./PopUp";
 
-export default function SurveysCard( {surveys} ) { 
-    const dispatch = useDispatch();
-    
+export default function SurveysCard( {surveys} ) {     
     const [popUp, setPopUp] = useState(false);
-
-    const [title, setTitle] = useState("");
-    const [completedOn, setCompletedOn] = useState("");
-
-    const handleSumbit = (e) => {
-            e.preventDefault();
-    
-            if (!(title && completedOn)) 
-                return;
-    
-                
-            dispatch(updateUser({
-                        id: 1,
-                        changes: {
-                            surveys: [
-                                ...surveys,
-                                {
-                                    title,
-                                    completedOn,
-                                    id: Date.now()
-                                }
-                            ]
-                        }
-                    })
-                    );
-            
-            setTitle("");
-            setCompletedOn("");
-    
-            setPopUp(false);
-        } 
 
     return ( <>
          <div className='card'>
@@ -62,29 +30,21 @@ export default function SurveysCard( {surveys} ) {
                         </table>
                     </div>
 
-                    { popUp ? <>
-                    <form>
-                        <button className='action close' onClick={() => setPopUp(false)}><img src="close.png" alt="Close" /></button>
 
-                        <label>
-                            <h4>Title</h4>
-                            <input type="text" onChange={(e) => setTitle(e.target.value)} value={title}/>
-                        </label>
-
-                        <label>
-                            <h4>Completed on</h4>
-                            <input type="text" onChange={(e) => setCompletedOn(e.target.value)} value={completedOn}/>
-                        </label>
-
-                        
-
-                        <div>
-                            <button className='action' onClick={handleSumbit}><img src="send.png" alt="Send" /></button>
-                        </div>
-                    </form>
-                    </>
-                    : null
+                    { popUp ? <PopUp addition={{
+                        subject: "surveys",
+                        inputs: {
+                            title: {
+                                type: "text",
+                                name: "Title"
+                            },
+                            completedOn: {
+                                type: "text",
+                                name: "Completed on"
+                            }
+                        }       
                     }
+                    } onClose={setPopUp} list={surveys}></PopUp> : null }
             </>
     )
 }
