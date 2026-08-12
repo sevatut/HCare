@@ -8,6 +8,7 @@ import AppointmentsCard from '../../modules/AppointmentsCard';
 import FeedbackCard from '../../modules/FeedbackCard';
 import SurveysCard from '../../modules/SurveysCard';
 import Tabs from '../../modules/Tabs';
+import HeaderProfile from '../../components/HeaderProfile';
 
 const FIELDS_NAME = {
     fullName: "Full Name",
@@ -38,13 +39,7 @@ export default function Profile() {
 
   return (
         <>
-            <header className='user'>
-                <img src={user?.image} alt="User avatar" />
-                <div className='name'>
-                    <h2>{user?.firstName} {user?.lastName}</h2>
-                    <span>{user?.role}</span>
-                </div>
-            </header>
+            <HeaderProfile user={user}></HeaderProfile>
             
             <Tabs tabs={["Summary", "Care plan", "Lab results", "PGHD", "Prescribtions"]} onChange={setTab}></Tabs>
 
