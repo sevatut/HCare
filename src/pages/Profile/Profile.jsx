@@ -9,6 +9,22 @@ import FeedbackCard from '../../modules/FeedbackCard';
 import SurveysCard from '../../modules/SurveysCard';
 import Tabs from '../../modules/Tabs';
 
+const FIELDS_NAME = {
+    fullName: "Full Name",
+    phone:  "Phone",
+    homePhone: "Home Phone",
+    address:  "Address",
+    email: "Email",
+    gender: "Gender",
+    birthAge: "Birth (Age)",
+    id: "Patient ID",
+    nationality:  "Nationality", 
+    materialStatus: "Material",
+    emergencyContact: "Emergency contact", 
+    memberID: "Membed ID",
+    insuranceProvider: "Insurance Provider",
+};
+
 export default function Profile() {
     const [tab, setTab] = useState();
 
@@ -17,6 +33,8 @@ export default function Profile() {
         (user) => user.id === 1
     )
   );
+
+  console.log();
 
   return (
         <>
@@ -36,11 +54,11 @@ export default function Profile() {
                         category: "Contact info",
                         isEditable: true,
                         fields: {
-                            fullName: { name: "Full Name", value: user?.fullName},
-                            phone: { name: "Phone", value: user?.phone},
-                            homePhone: { name: "Home Phone", value: user?.homePhone},
-                            address: { name: "Address", value: user?.address},
-                            email: { name: "Email", value: user?.email},
+                            fullName: { name: FIELDS_NAME.fullName, value: user?.fullName},
+                            phone: { name: FIELDS_NAME.phone, value: user?.phone},
+                            homePhone: { name: FIELDS_NAME.homePhone, value: user?.homePhone},
+                            address: { name: FIELDS_NAME.address, value: user?.address},
+                            email: { name: FIELDS_NAME.email, value: user?.email},
                         }
                     }}></InformationCard>
 
@@ -48,12 +66,12 @@ export default function Profile() {
                         category: "Personal",
                         isEditable: false,
                         fields: {
-                            gender: { name: "Full Name", value: user?.gender[0].toUpperCase() + user?.gender.slice(1)},
-                            birthAge: { name: "Birth (Age)", value: user?.birthAge},
-                            id: { name: "Patient ID", value: user?.id},
-                            nationality: { name: "Nationality", value: user?.nationality},
-                            materialStatus: { name: "Material", value: user?.materialStatus},
-                            emergencyContact: { name: "Emergency contact", value: user?.emergencyContact},
+                            gender: { name: FIELDS_NAME.gender, value: user?.gender[0].toUpperCase() + user?.gender.slice(1)},
+                            birthAge: { name: FIELDS_NAME.birthAge, value: user?.birthAge},
+                            id: { name: FIELDS_NAME.id, value: user?.id},
+                            nationality: { name: FIELDS_NAME.nationality, value: user?.nationality},
+                            materialStatus: { name: FIELDS_NAME.materialStatus, value: user?.materialStatus},
+                            emergencyContact: { name: FIELDS_NAME.emergencyContact, value: user?.emergencyContact},
                         }
                     }}></InformationCard>
                 </div>  
@@ -63,8 +81,8 @@ export default function Profile() {
                         category: "Insurance info",
                         isEditable: true,
                         fields: {
-                            memberID: { name: "Membed ID", value: user?.memberID},
-                            insuranceProvider: { name: "Insurance Provider", value: user?.insuranceProvider},
+                            memberID: { name: FIELDS_NAME.memberID, value: user?.memberID},
+                            insuranceProvider: { name: FIELDS_NAME.insuranceProvider, value: user?.insuranceProvider},
                         }
                     }}></InformationCard>
                 </div>
