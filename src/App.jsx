@@ -6,7 +6,7 @@ import { setUsers } from './services/usersSlice';
 import './App.css'
 import Profile from './pages/Profile/Profile';
 import Staff from './pages/Staff/Staff';
-import Feedback from './components/Score';
+import Feedback from './pages/Feedback/Feedback';
 import { defaultSerializeQueryArgs } from '@reduxjs/toolkit/query';
 import { Routes, Route } from "react-router-dom";
 
