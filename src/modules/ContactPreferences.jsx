@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux";
-import { updateUser } from "../../services/usersSlice";
+import { updateUser } from "../services/usersSlice";
 
-export default function ContactPreferences( {preferences} ) { 
+export default function ContactPreferences( {initialPreferences} ) { 
     const dispatch = useDispatch();
 
-    const [email, setEmail] = useState(preferences?.email);
-    const [phone, setPhone] = useState(preferences?.phone);
-    const [mail, setMail] = useState(preferences?.mail);
+    const [preferences, setPreferences] = useState(initialPreferences ? initialPreferences : {
+        email: false,
+        phone: false,
+        mail: false
+    });
 
     
     const handleChange = (field, value) => {
         const updatedPreferences = {
-            email,
-            phone,
-            mail,
+            ...preferences,
             [field]: value,
         };
 
@@ -25,9 +25,7 @@ export default function ContactPreferences( {preferences} ) {
             }
         }));
 
-        if (field === "email") setEmail(value);
-        if (field === "phone") setPhone(value);
-        if (field === "mail") setMail(value);
+        setPreferences(updatedPreferences);
     };
 
     return (
@@ -45,9 +43,9 @@ export default function ContactPreferences( {preferences} ) {
 
                                 <div>
                                     <span className='deny'>DENY</span>
-                                    <label class="switch">
-                                        <input type="checkbox" checked={email} onChange={(e) => handleChange("email", e.target.checked)} />
-                                        <span class="slider round"></span>
+                                    <label className="switch">
+                                        <input type="checkbox" checked={preferences.email} onChange={(e) => handleChange("email", e.target.checked)} />
+                                        <span className="slider round"></span>
                                     </label>
                                     <span className='allow'>ALLOW</span>
                                 </div>
@@ -58,9 +56,9 @@ export default function ContactPreferences( {preferences} ) {
 
                                 <div>
                                     <span className='deny'>DENY</span>
-                                    <label class="switch">
-                                        <input type="checkbox" checked={phone} onChange={(e) => handleChange("phone", e.target.checked)}/>
-                                        <span class="slider round"></span>
+                                    <label className="switch">
+                                        <input type="checkbox" checked={preferences.phone} onChange={(e) => handleChange("phone", e.target.checked)}/>
+                                        <span className="slider round"></span>
                                     </label>
                                     <span className='allow'>ALLOW</span>
                                 </div>
@@ -72,9 +70,9 @@ export default function ContactPreferences( {preferences} ) {
                                 <div>
                                     <span className='deny'>DENY</span>
                                     
-                                    <label class="switch">
-                                        <input type="checkbox" checked={mail} onChange={(e) => handleChange("mail", e.target.checked)}/>
-                                        <span class="slider round"></span>
+                                    <label className="switch">
+                                        <input type="checkbox" checked={preferences.mail} onChange={(e) => handleChange("mail", e.target.checked)}/>
+                                        <span className="slider round"></span>
                                     </label>
 
                                     <span className='allow'>ALLOW</span>
