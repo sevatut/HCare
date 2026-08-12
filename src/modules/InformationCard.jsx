@@ -39,9 +39,6 @@ export default function InformationCard( {info} ) {
         setIsEditing(false);
     };
 
-    useEffect(() => {
-}, [user]);
-
     return (
                     <div className='card'>
                         <div className='label'>
