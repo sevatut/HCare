@@ -11,7 +11,6 @@ p {
     margin-bottom: 5px;
 }
 
-
 img {
     width: 100px;
 }
@@ -57,12 +56,20 @@ th {
     box-sizing: border-box;
 }
 
-
+button {
+    background-color: transparent;
+}
 
 
 .user {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+}
+
+.name {
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .name > h2 {
@@ -78,7 +85,8 @@ nav > ul > li {
 }
 
 nav > ul > li > button {
-    background-color: white;
+    justify-content: center;
+    background-color: transparent;
     width: 100%;
 }
 
@@ -102,23 +110,18 @@ section > div {
 .label {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
 }
 
 .action {
-    padding: 0;
+    padding: 5px;
     height: fit-content;
+    border: 1px rgb(236, 236, 236) solid;
 }
 
 .action > img {
     width: 25px;
-}
-
-input[type="text"] {
-    height: 30px;
-    width: 100%;
-    box-sizing: border-box;
-    border: none;
+    height: 25px;
 }
 
 .logs > li {
@@ -241,4 +244,32 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+form {
+    position: fixed;
+    height: 220px;
+    width: 200px;
+    padding: 20px;
+    top: calc(40vh - 100px);
+    left: calc(50vw - 100px);
+    background-color: rgba(226, 225, 225, 0.774);
+    border-radius: 10px;
+    
+}
+
+label {
+    display: block;
+
+}
+
+.close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+form div {
+    display: flex;
+    justify-content: flex-end;
 }
