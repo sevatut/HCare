@@ -1,15 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, lazy, Suspense } from 'react'
 import { useDispatch } from 'react-redux'
 import reactLogo from './assets/react.svg'
 import { useGetUsersQuery } from './services/usersApi'
 import { setUsers } from './services/usersSlice';
 import './App.css'
-import Profile from './pages/Profile/Profile';
-import Staff from './pages/Staff/Staff';
-import Feedback from './pages/Feedback/Feedback';
 import { defaultSerializeQueryArgs } from '@reduxjs/toolkit/query';
 import { Routes, Route } from "react-router-dom";
 import Header from './components/Header';
+
+const Profile = lazy(() => import('./pages/Profile/Profile'));
+const Staff = lazy(() => import('./pages/Staff/Staff'));
+const Feedback = lazy(() => import('./pages/Feedback/Feedback'));
 
 function App() {
   const dispatch = useDispatch();
@@ -60,13 +61,14 @@ function App() {
       <Header></Header>
 
       <main>
-        <Routes>
-          <Route path="/" element={<Profile />} />
-          <Route path="/doctors" element={<Staff />} />
-          <Route path="/feedback" element={<Feedback />} />
-          <Route path="*" element={<p>No such page</p>} /> 
-          
-        </Routes>
+        <Suspense fallback={<h1>Загрузка...</h1>}>
+          <Routes>
+            <Route path="/" element={<Profile />} />
+            <Route path="/doctors" element={<Staff />} />
+            <Route path="/feedback" element={<Feedback />} />
+            <Route path="*" element={<p>No such page</p>} /> 
+          </Routes>
+        </Suspense>
       </main>
     </>
   )
