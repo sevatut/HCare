@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { updateUser } from "../services/usersSlice";
+import Tabs from './Tabs';
 
 export default function ActivitesCard( {activities} ) {
     const dispatch = useDispatch();
@@ -49,13 +50,7 @@ export default function ActivitesCard( {activities} ) {
                             <button className='action' onClick={() => setPopUp(true)}><img src="add.png" alt="Add" /></button>
                         </div>
 
-                        <nav>
-                            <ul>
-                                <li><button onClick={() => setTab("Time line")}>Time line</button></li>
-                                <li><button onClick={() => setTab("Tasks")}>Tasks</button></li>
-                                <li><button onClick={() => setTab("Notes")}>Notes</button></li>
-                            </ul>
-                        </nav>
+                        <Tabs tabs={["Time line", "Tasks", "Notes"]} onChange={setTab}></Tabs>
 
                         {(() => {
                             switch(tab) {

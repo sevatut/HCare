@@ -7,8 +7,10 @@ import ContactPreferences from '../../modules/ContactPreferences';
 import AppointmentsCard from '../../modules/AppointmentsCard';
 import FeedbackCard from '../../modules/FeedbackCard';
 import SurveysCard from '../../modules/SurveysCard';
+import Tabs from '../../modules/Tabs';
 
 export default function Profile() {
+    const [tab, setTab] = useState();
 
    const user = useSelector(
     (state) => state.users.users.find(
@@ -25,16 +27,8 @@ export default function Profile() {
                     <span>{user?.role}</span>
                 </div>
             </header>
-
-            <nav>
-                <ul>
-                    <li><button>Summary</button></li>
-                    <li><button>Care plan</button></li>
-                    <li><button>Lab results</button></li>
-                    <li><button>PGHD</button></li>
-                    <li><button>Prescribtions</button></li>
-                </ul>
-            </nav>
+            
+            <Tabs tabs={["Summary", "Care plan", "Lab results", "PGHD", "Prescribtions"]} onChange={setTab}></Tabs>
 
             <section>
                 <div>
