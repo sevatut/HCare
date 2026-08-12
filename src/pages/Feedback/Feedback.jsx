@@ -4,7 +4,7 @@ import Score from '../../components/Score'
 export default function Feedback() {
   return (
     <>
-                <h2>Feedbacssk</h2>
+                <h2>Feedback</h2>
                 
                 <img src="feedback.png" alt="Hand with smartphone" className='poster'/>
 
