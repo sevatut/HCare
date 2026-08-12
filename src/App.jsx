@@ -9,6 +9,7 @@ import Staff from './pages/Staff/Staff';
 import Feedback from './pages/Feedback/Feedback';
 import { defaultSerializeQueryArgs } from '@reduxjs/toolkit/query';
 import { Routes, Route } from "react-router-dom";
+import Header from './components/Header';
 
 function App() {
   const dispatch = useDispatch();
@@ -56,23 +57,8 @@ function App() {
 
   return (
     <>
-      <header className='menu'>
-        <div className='navigation'>
-          <img src="hamburger.png" alt="hamburger" />
+      <Header></Header>
 
-          <div>
-            <img src="hcare.jpg" alt="HCare logo" />
-            <h2>HCare</h2>
-          </div>
-
-        </div>
-
-        <div className='personal'>
-          <img src="notification.png" alt="Notification" />
-          <img src="avatar.jpg" alt="Avatar" />
-        </div>
-
-      </header>
       <main>
         <Routes>
           <Route path="/" element={<Profile />} />
