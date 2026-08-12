@@ -46,7 +46,7 @@ export default function InformationCard( {info} ) {
                     <div className='card'>
                         <div className='label'>
                             <h2>{info.category}</h2>
-                            { info.isEditable ? <button className='action' onClick={isEditing ? handleSave : handleEdit}><img src="edit.png" alt="Redact" /></button> : null }
+                            { info.isEditable ? <button className='action' onClick={isEditing ? handleSave : handleEdit}><img src="buttons/edit.png" alt="Redact" /></button> : null }
                         </div>
 
                         <hr />

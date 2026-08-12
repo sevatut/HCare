@@ -1,6 +1,5 @@
 import { useEffect, useState, lazy, Suspense } from 'react'
 import { useDispatch } from 'react-redux'
-import reactLogo from './assets/react.svg'
 import { useGetUsersQuery } from './services/usersApi'
 import { setUsers } from './services/usersSlice';
 import './App.css'

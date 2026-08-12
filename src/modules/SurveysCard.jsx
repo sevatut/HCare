@@ -10,7 +10,7 @@ export default function SurveysCard( {surveys} ) {
          <div className='card'>
                         <div className='label'>
                             <h2>Surveys</h2>
-                            <button className='action'><img src="add.png" alt="Add" onClick={() => setPopUp(true)}/></button>
+                            <button className='action'><img src="buttons/add.png" alt="Add" onClick={() => setPopUp(true)}/></button>
                         </div>
 
                         <table className='two-columns'>

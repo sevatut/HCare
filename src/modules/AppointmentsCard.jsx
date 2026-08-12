@@ -11,7 +11,7 @@ export default function AppointmentsCard( {appointments} ) {
                     <div className='card'>
                         <div className='label'>
                             <h2>Appointments</h2>
-                            <button className='action' onClick={() => setPopUp(true)}><img src="add.png" alt="Add"/></button>
+                            <button className='action' onClick={() => setPopUp(true)}><img src="buttons/add.png" alt="Add"/></button>
                         </div>
 
                         <TableAppointments appointments={appointments}></TableAppointments>   

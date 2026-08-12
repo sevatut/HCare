@@ -59,7 +59,7 @@ export default function PopUp( {addition, onClose, list} ) {
 
     return (
     <form>
-        <button className='action close' onClick={() => onClose(false)}><img src="close.png" alt="Close" /></button>
+        <button className='action close' onClick={() => onClose(false)}><img src="buttons/close.png" alt="Close" /></button>
         
          {Object.entries(addition.inputs).map(([key, input]) => {
             if (input.type == "checkbox") {
@@ -98,7 +98,7 @@ export default function PopUp( {addition, onClose, list} ) {
     )}
 
     <div>
-        <button className='action' onClick={handleSubmit}><img src="send.png" alt="Send" /></button>
+        <button className='action' onClick={handleSubmit}><img src="buttons/send.png" alt="Send" /></button>
     </div>
     </form>
     )

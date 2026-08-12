@@ -6,7 +6,7 @@ export default function Feedback() {
     <>
                 <h2>Feedback</h2>
                 
-                <img src="feedback.png" alt="Hand with smartphone" className='poster'/>
+                <img src="other/feedback.png" alt="Hand with smartphone" className='poster'/>
 
                 <section className='feedback'>
                     <Score title="How satisfied are you with making an appoitment?"></Score>

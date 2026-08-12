@@ -10,7 +10,7 @@ export default function FeedbackCard( {feedback} ) {
                 <div className='card'>
                     <div className='label'>
                         <h2>Feedback</h2>
-                        <button className='action'><img src="add.png" alt="Add" onClick={() => setPopUp(true)}/></button>
+                        <button className='action'><img src="buttons/add.png" alt="Add" onClick={() => setPopUp(true)}/></button>
                     </div>
 
                     <table className='three-columns'>

@@ -12,7 +12,7 @@ export default function ActivitesCard( {activities} ) {
     return ( <>     <div className='card'>
                         <div className='label'>
                             <h2>Activities</h2>
-                            <button className='action' onClick={() => setPopUp(true)}><img src="add.png" alt="Add" /></button>
+                            <button className='action' onClick={() => setPopUp(true)}><img src="buttons/add.png" alt="Add" /></button>
                         </div>
 
                         <Tabs tabs={["Time line", "Tasks", "Notes"]} onChange={setTab}></Tabs>
@@ -23,7 +23,7 @@ export default function ActivitesCard( {activities} ) {
                                 return (
                                     <ul className='logs'>
                                         {activities?.map((activity) => <li key={activity.id}>
-                                            <img src={activity.type + ".png"} alt={activity.type}/>
+                                            <img src={`activities/${activity.type}.png`} alt={activity.type}/>
                                             <div>
                                                 <h4>{activity.title}</h4>
                                                 <p>{activity.type == "message" ? "Sent" : null} by {activity.author}</p>

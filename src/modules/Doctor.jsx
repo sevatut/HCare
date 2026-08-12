@@ -19,7 +19,7 @@ export default function Doctor( {doctor: {id, image, firstName, lastName, addres
         <td>
             <p className='booking'>
                 <input type="date" ref={booking} onChange={() => alert("Дата забронирована")}/>
-                <button onClick={() => {booking.current.showPicker()}}><img src="calendar.png" alt="calendar"/>Book date</button>
+                <button onClick={() => {booking.current.showPicker()}}><img src="buttons/calendar.png" alt="calendar"/>Book date</button>
             </p>    
         </td>
         <td>Confirmed</td>
