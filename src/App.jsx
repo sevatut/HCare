@@ -11,6 +11,12 @@ const Profile = lazy(() => import('./pages/Profile/Profile'));
 const Staff = lazy(() => import('./pages/Staff/Staff'));
 const Feedback = lazy(() => import('./pages/Feedback/Feedback'));
 
+const AppRoutes = {
+  Profile: "/",
+  Staff: "/doctors",
+  Feedback: "/feedback"
+}
+
 function App() {
   const dispatch = useDispatch();
   const { data, isLoading } = useGetUsersQuery();
@@ -62,9 +68,9 @@ function App() {
       <main>
         <Suspense fallback={<h1>Загрузка...</h1>}>
           <Routes>
-            <Route path="/" element={<Profile />} />
-            <Route path="/doctors" element={<Staff />} />
-            <Route path="/feedback" element={<Feedback />} />
+            <Route path={AppRoutes.Profile} element={<Profile />} />
+            <Route path={AppRoutes.Staff} element={<Staff />} />
+            <Route path={AppRoutes.Feedback} element={<Feedback />} />
             <Route path="*" element={<p>No such page</p>} /> 
           </Routes>
         </Suspense>
