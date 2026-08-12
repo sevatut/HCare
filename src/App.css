@@ -8,6 +8,9 @@ main {
 
 .menu {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px rgb(236, 236, 236) solid;
     padding: 10px 40px;
     box-sizing: border-box;
@@ -21,12 +24,18 @@ main {
 }
 
 .navigation {
-    display: flex;   
+    display: flex;
+    align-items: center;
 }
 
 .navigation div {
     display: flex;
     margin-left: 20px;
+    align-items: center;
+}
+
+.navigation h2 {
+    margin: 0;
 }
 
 .personal img {
