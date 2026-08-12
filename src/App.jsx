@@ -8,7 +8,7 @@ import Profile from './components/Profile/Profile'
 import Staff from './components/Staff/Staff'
 import Feedback from './components/Feedback/Feedback'
 import { defaultSerializeQueryArgs } from '@reduxjs/toolkit/query';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch();
@@ -74,7 +74,13 @@ function App() {
 
       </header>
       <main>
-        <Feedback></Feedback>
+        <Routes>
+          <Route path="/" element={<Profile />} />
+          <Route path="/doctors" element={<Staff />} />
+          <Route path="/feedback" element={<Feedback />} />
+          <Route path="*" element={<p>No such page</p>} /> 
+          
+        </Routes>
       </main>
     </>
   )
