@@ -1,5 +1,5 @@
 import './Feedback.css'
-import Score from '../../components/Score'
+import Score from '../../modules/Score'
 
 export default function Feedback() {
   return (
