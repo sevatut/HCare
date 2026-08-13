@@ -217,6 +217,7 @@ section > div {
   background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
+  z-index: 997;
 }
 
 .slider:before {
@@ -248,14 +249,21 @@ input:checked + .slider:before {
 
 form {
     position: fixed;
-    height: 220px;
-    width: 200px;
-    padding: 20px;
-    top: calc(40vh - 100px);
-    left: calc(50vw - 100px);
-    background-color: rgba(226, 225, 225, 0.774);
+    height: 500px;
+    width: 300px;
+    padding: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFFFFF;
     border-radius: 10px;
-    
+    z-index: 999;
+}
+
+form input, form select {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 50px;
 }
 
 label {
@@ -272,4 +280,42 @@ label {
 form div {
     display: flex;
     justify-content: flex-end;
+}
+
+.send img {
+    width: 100px;
+    height: auto;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998; 
+}
+
+.check {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin-bottom: 50px;
+}
+
+.check h4 {
+    width: 400px;
+}
+
+.check input {
+    margin: 0;
+}
+
+.error {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border: none;
 }
