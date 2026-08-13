@@ -5,7 +5,7 @@ import { updateUser } from "../services/usersSlice";
 export default function PopUp( {addition, onClose, list} ) {
     const dispatch = useDispatch();
 
-    const [update, useUpdate] = useState({
+    const [update, setUpdate] = useState({
         ...Object.keys(addition.inputs).map((key) => {
             
             if (addition.inputs[key].type == "checkbox") {
@@ -66,7 +66,7 @@ export default function PopUp( {addition, onClose, list} ) {
                 return (
                     <label key={key}>
                         <h4>{input.name}</h4>
-                        <input type="checkbox" checked={update[key]} onChange={(e) => useUpdate( {...update, [key]: e.target.checked} )}/>
+                        <input type="checkbox" checked={update[key]} onChange={(e) => setUpdate( {...update, [key]: e.target.checked} )}/>
                     </label>
                 )
             }
@@ -75,7 +75,7 @@ export default function PopUp( {addition, onClose, list} ) {
                 return (
                     <label key={key}>
                         <h4>{input.name}</h4>
-                        <select onChange={(e) => useUpdate( {...update, [key]: e.target.value} ) } value={update[key]}>
+                        <select onChange={(e) => setUpdate( {...update, [key]: e.target.value} ) } value={update[key]}>
                             {
                                 Object.entries(input.options).map(([key, option]) => (
                                     <option value={key} key={key}>{option}</option>
@@ -90,7 +90,7 @@ export default function PopUp( {addition, onClose, list} ) {
                 return (
                 <label key={key}>
                     <h4>{input.name}</h4>
-                    <input type={input.type} className={key} onChange={(e) => useUpdate( {...update, [key]: e.target.value} ) } value={update[key]}/>
+                    <input type={input.type} className={key} onChange={(e) => setUpdate( {...update, [key]: e.target.value} ) } value={update[key]}/>
                 </label>
                 )
             }
