@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Doctor( {doctor: {id, image, firstName, lastName, address}} ) {
@@ -26,7 +26,7 @@ export default function Doctor( {doctor: {id, image, firstName, lastName, addres
         </td>
         <td>Confirmed</td>
 
-        <ToastContainer />
+        
     </tr>
     )
 }

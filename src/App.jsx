@@ -6,6 +6,7 @@ import './App.css'
 import { defaultSerializeQueryArgs } from '@reduxjs/toolkit/query';
 import { Routes, Route } from "react-router-dom";
 import Header from './components/Header';
+import { ToastContainer } from 'react-toastify';
 
 const Profile = lazy(() => import('./pages/Profile/Profile'));
 const Staff = lazy(() => import('./pages/Staff/Staff'));
@@ -75,6 +76,8 @@ function App() {
           </Routes>
         </Suspense>
       </main>
+
+      <ToastContainer />
     </>
   )
 }

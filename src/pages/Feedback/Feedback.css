@@ -31,7 +31,7 @@
     justify-content: space-between;
 }
 
-.circles > div {
+.circles div {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -55,4 +55,8 @@
 .excellent {
     border: 1px solid blue;
 
+}
+
+.circles button {
+    padding: 0;
 }
