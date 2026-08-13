@@ -41,3 +41,32 @@ main {
 .personal img {
     margin-right: 20px;
 }
+
+.navigation button {
+    padding: 0;
+}
+
+.burger {
+    width: 14vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    background-color: #1a1a1a;
+}
+
+.burger ul {
+    flex-direction: column;
+    align-items: center;
+    height: 50%; 
+}
+
+.link {
+    color: #E0E0E0;
+    font-size: 3em;
+}
+
+.burger button {
+    position: absolute;
+    right: 0;
+    border: none;
+}
