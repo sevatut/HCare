@@ -1,4 +1,6 @@
 import { useRef } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Doctor( {doctor: {id, image, firstName, lastName, address}} ) {
     const booking = useRef({});
@@ -18,11 +20,13 @@ export default function Doctor( {doctor: {id, image, firstName, lastName, addres
         <td>15:00 - 22:00</td>
         <td>
             <p className='booking'>
-                <input type="date" ref={booking} onChange={() => alert("Дата забронирована")}/>
+                <input type="date" ref={booking} onChange={() => toast("The date has been booked")}/>
                 <button onClick={() => {booking.current.showPicker()}}><img src="buttons/calendar.png" alt="calendar"/>Book date</button>
             </p>    
         </td>
         <td>Confirmed</td>
+
+        <ToastContainer />
     </tr>
     )
 }
