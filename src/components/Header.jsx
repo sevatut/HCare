@@ -1,6 +1,5 @@
 export default function Header() {
   return (
-    <>
         <header className='menu'>
             <div className='navigation'>
             <img src="buttons/hamburger.png" alt="hamburger" />
@@ -17,6 +16,5 @@ export default function Header() {
             <img src="other/avatar.jpg" alt="Avatar" />
             </div>
       </header>
-    </>
   )
 }
