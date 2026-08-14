@@ -51,10 +51,7 @@ function App() {
         }
       };
 
-      
-
-      console.log(users);
-    dispatch(setUsers(users));
+        dispatch(setUsers(users));
     }
   }, [data, dispatch]);
 

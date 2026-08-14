@@ -35,8 +35,6 @@ export default function Profile() {
     )
   );
 
-  console.log();
-
   return (
         <>
             <HeaderProfile user={user}></HeaderProfile>
