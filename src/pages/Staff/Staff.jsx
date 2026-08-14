@@ -11,7 +11,7 @@ export default function Staff() {
     <>
                 <HeaderStaff></HeaderStaff>
                 
-                <section>
+                <section className='doctors'>
                      <TableStaff doctors={doctors}></TableStaff>
                 </section>
     </>
