@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Doctor from "./Doctor";
 
 export default function TableStaff( {doctors} ) {
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(0);
+
+    useEffect(()=> {
+        setPage(0);
+    }, [doctors]);
 
     return ( <>
         <table className='staff'>
@@ -17,7 +21,9 @@ export default function TableStaff( {doctors} ) {
             </thead>
 
             <tbody>
-                {doctors?.slice(page, page + 5).map((doctor) => (
+                {
+                
+                doctors?.slice(page * 5, (page * 5) + 5).map((doctor) => (
                     <Doctor doctor={doctor} key={doctor.id}></Doctor>
                 ))}
             </tbody>
