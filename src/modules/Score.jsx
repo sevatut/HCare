@@ -9,8 +9,8 @@ export default function Score( {title} ) {
                         <div className='circles'>
                             {Array.from({ length: 10 }, (_, index) => {
                                 const number = index + 1;
-                                return <button onClick={() => toast(`You rated our work ${number}`)}>
-                                        <div key={index} className={defineGrade(number)}>{number}</div>
+                                return <button key={index} onClick={() => toast(`You rated our work ${number}`)}>
+                                        <div className={defineGrade(number)}>{number}</div>
                                     </button>
                             })}
                         </div>
