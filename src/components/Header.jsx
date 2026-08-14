@@ -19,7 +19,7 @@ export default function Header() {
 
             <div className='personal'>
             <img src="buttons/notification.png" alt="Notification" />
-            <img src="other/avatar.jpg" alt="Avatar" />
+            <Link to="/"><img src="other/avatar.jpg" alt="Avatar" /></Link>
             </div>
       </header>
 
