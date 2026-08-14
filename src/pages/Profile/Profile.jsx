@@ -85,7 +85,7 @@ export default function Profile() {
                     <AppointmentsCard appointments={user?.appointments}></AppointmentsCard>
                     <SurveysCard surveys={user?.surveys}></SurveysCard>
                     <FeedbackCard feedback={user?.feedback}></FeedbackCard>
-                    <ContactPreferences preferences={user?.contactPreferences}></ContactPreferences>
+                    <ContactPreferences initialPreferences={user?.contactPreferences}></ContactPreferences>
                 </div>
 
             </section> 
