@@ -1,0 +1,72 @@
+main {
+    background-color: white;
+    width: 65vw;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px rgb(236, 236, 236) solid;
+    padding: 10px 40px;
+    box-sizing: border-box;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.menu img {
+    height: 30px;
+    width: auto;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navigation div {
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.navigation h2 {
+    margin: 0;
+}
+
+.personal img {
+    margin-right: 20px;
+}
+
+.navigation button {
+    padding: 0;
+}
+
+.burger {
+    width: 14vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    background-color: #1a1a1a;
+}
+
+.burger ul {
+    flex-direction: column;
+    align-items: center;
+    height: 50%; 
+}
+
+.link {
+    color: #E0E0E0;
+    font-size: 3em;
+}
+
+.burger button {
+    position: absolute;
+    right: 0;
+    border: none;
+}
